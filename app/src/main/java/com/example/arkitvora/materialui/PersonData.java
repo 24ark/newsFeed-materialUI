@@ -8,11 +8,11 @@ public class PersonData {
 
     String name;
     String email;
-    int image;
+    RoundedAvatarDrawable image;
     int id_;
     int likeCount;
 
-    public PersonData(String name, String email, int image, int id_, int likeCount) {
+    public PersonData(String name, String email, RoundedAvatarDrawable image, int id_, int likeCount) {
         this.name = name;
         this.email = email;
         this.image = image;
@@ -33,7 +33,7 @@ public class PersonData {
     public int getLikeCount() { return likeCount;}
 
 
-    public int getImage() {
+    public RoundedAvatarDrawable getImage() {
         return image;
     }
 

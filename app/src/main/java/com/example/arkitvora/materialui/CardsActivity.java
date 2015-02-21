@@ -4,6 +4,8 @@ package com.example.arkitvora.materialui;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -47,6 +49,7 @@ public class CardsActivity extends MainActivity {
     private static ArrayList<Integer> removedItems;
     private static ArrayList<Integer> addedNewItems;
     private static Integer totalfeeds=0;
+    public RoundedAvatarDrawable roundedImage;
 
 
 
@@ -81,10 +84,13 @@ public class CardsActivity extends MainActivity {
 
         people = new ArrayList<PersonData>();
         for (int i = 0; i < MyData.nameArray.length; i++) {
+
+            Bitmap bm = BitmapFactory.decodeResource(getResources(), MyData.drawableArray[i]);
+             roundedImage = new RoundedAvatarDrawable(bm);
             people.add(new PersonData(
                     MyData.nameArray[i],
                     MyData.emailArray[i],
-                    MyData.drawableArray[i],
+                    roundedImage,
                     MyData.id_[i],
                     MyData.tickcount[i]
             ));
@@ -185,7 +191,7 @@ public class CardsActivity extends MainActivity {
                                 people.add(new PersonData(
                                         obj.get("screenname").toString(),
                                         obj.get("tbody").toString(),
-                                        MyData.drawableArray[0],
+                                        roundedImage,
                                         MyData.id_[0],
                                         MyData.tickcount[0]
                                 ));
@@ -350,8 +356,8 @@ public class CardsActivity extends MainActivity {
     private void addNewOneToList()
     {
         Toast.makeText(this, totalfeeds.toString(), Toast.LENGTH_SHORT).show();
-        PersonData p =new PersonData("Blue","kj@blue.com",R.drawable.cute,totalfeeds,0);
-        people.add(p);
+       // PersonData p =new PersonData("Blue","kj@blue.com",R.drawable.cute,totalfeeds,0);
+       // people.add(p);
 
         totalfeeds++;
 
@@ -366,13 +372,13 @@ public class CardsActivity extends MainActivity {
 
     private void addRemovedItemToList() {
         int addItemAtListPosition = 3;
-        people.add(addItemAtListPosition, new PersonData(
-                MyData.nameArray[removedItems.get(0)],
-                MyData.emailArray[removedItems.get(0)],
-                MyData.drawableArray[removedItems.get(0)],
-                MyData.id_[removedItems.get(0)],
-                MyData.tickcount[removedItems.get(0)]
-        ));
+      //  people.add(addItemAtListPosition, new PersonData(
+        //        MyData.nameArray[removedItems.get(0)],
+          //      MyData.emailArray[removedItems.get(0)],
+            //    MyData.drawableArray[removedItems.get(0)],
+              //  MyData.id_[removedItems.get(0)],
+                //MyData.tickcount[removedItems.get(0)]
+        //));
         adapter.notifyItemInserted(addItemAtListPosition);
         removedItems.remove(0);
     }

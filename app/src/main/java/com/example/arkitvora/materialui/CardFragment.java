@@ -2,6 +2,8 @@ package com.example.arkitvora.materialui;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -99,10 +101,13 @@ public class CardFragment extends Fragment {
 
         people = new ArrayList<PersonData>();
         for (int i = 0; i < MyData.nameArray.length; i++) {
+
+            Bitmap bm = BitmapFactory.decodeResource(getResources(), MyData.drawableArray[i]);
+            RoundedAvatarDrawable roundedImage = new RoundedAvatarDrawable(bm);
             people.add(new PersonData(
                     MyData.nameArray[i],
                     MyData.emailArray[i],
-                    MyData.drawableArray[i],
+                    roundedImage,
                     MyData.id_[i],
                     MyData.tickcount[i]
             ));
