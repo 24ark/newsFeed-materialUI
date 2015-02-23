@@ -90,7 +90,7 @@ public class CardsActivity extends MainActivity {
             people.add(new PersonData(
                     MyData.nameArray[i],
                     MyData.emailArray[i],
-                    roundedImage,
+                    MyData.drawableArray[i],
                     MyData.id_[i],
                     MyData.tickcount[i]
             ));
@@ -191,7 +191,7 @@ public class CardsActivity extends MainActivity {
                                 people.add(new PersonData(
                                         obj.get("screenname").toString(),
                                         obj.get("tbody").toString(),
-                                        roundedImage,
+                                        MyData.drawableArray[0],
                                         MyData.id_[0],
                                         MyData.tickcount[0]
                                 ));

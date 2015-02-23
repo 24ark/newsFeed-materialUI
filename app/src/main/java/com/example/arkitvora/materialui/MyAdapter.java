@@ -70,8 +70,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         textViewName.setText(peopleDataSet.get(listPosition).getName());
         textViewEmail.setText(peopleDataSet.get(listPosition).getEmail());
-       // imageView.setImageResource(peopleDataSet.get(listPosition).getImage());
-        imageView.setImageDrawable(peopleDataSet.get(listPosition).getImage());
+        imageView.setImageResource(peopleDataSet.get(listPosition).getImage());
+       // imageView.setImageDrawable(peopleDataSet.get(listPosition).getImage());
        // Log.d(getPackageName(), textViewLikeCount != null ? "lvCountries is not null!" : "lvCountries is null!");
        // textViewLikeCount.setText(Integer.toString(peopleDataSet.get(listPosition).getLikeCount()));
     /*    likeButton.setOnClickListener(new View.OnClickListener() {

@@ -102,7 +102,12 @@ public class ProfileActivity extends MainActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return SuperAwesomeCardFragment.newInstance(position);
+
+            CardFragment ne = new CardFragment();
+            NavigationDrawerFragment m = new NavigationDrawerFragment();
+            SuperAwesomeCardFragment p = new SuperAwesomeCardFragment();
+            return ne;
+          //  return ne;
         }
     }
 

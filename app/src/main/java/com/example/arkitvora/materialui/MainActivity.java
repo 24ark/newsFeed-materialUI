@@ -88,8 +88,8 @@ public class MainActivity extends FragmentActivity
 
             case 0:
 
-                CardFragment fragment = new CardFragment();
-                fragmentTransaction.replace(R.id.container, fragment).commit();
+               // CardFragment fragment = new CardFragment();
+            //    fragmentTransaction.replace(R.id.container, fragment).commit();
 
 
 
