@@ -3,9 +3,12 @@ package com.example.arkitvora.materialui;
 import android.app.Activity;
 
 import android.app.ActionBar;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+//import android.app.Fragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+//import android.app.FragmentManager;
+//import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -78,7 +81,7 @@ public class MainActivity extends FragmentActivity
           //      .replace(R.id.container, PlaceholderFragment.newInstance(position+1))
             //    .commit();
 
-        FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
 
@@ -88,8 +91,12 @@ public class MainActivity extends FragmentActivity
 
             case 0:
 
-               // CardFragment fragment = new CardFragment();
-            //    fragmentTransaction.replace(R.id.container, fragment).commit();
+                CardFragment fragment = new CardFragment();
+
+                fragmentTransaction.replace(R.id.container, fragment).commit();
+
+
+               // fragmentTransaction.replace(R.id.container, fragment).commit();
 
 
 
@@ -129,11 +136,14 @@ public class MainActivity extends FragmentActivity
                 break;*/
 
 
-                Intent intent7 = new Intent(this, ProfileActivity.class);
+               /* Intent intent7 = new Intent(this, ProfileActivity.class);
                 //intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent7);
                 Log.d("position", Integer.toString(position));
-                break;
+                break;  */
+
+                ProfileFragment fragment1 = new ProfileFragment();
+                fragmentTransaction.replace(R.id.container, fragment1).commit();
 
 
 
