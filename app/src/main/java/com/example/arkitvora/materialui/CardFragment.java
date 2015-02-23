@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.melnykov.fab.FloatingActionButton;
+
 import java.util.ArrayList;
 
 
@@ -99,6 +101,8 @@ public class CardFragment extends Fragment {
         //buttonOnClickListener = new ButtonOnClickListener(this);
 
         recyclerView = (RecyclerView)rootView.findViewById(R.id.my_recycler_view);
+        FloatingActionButton fab = (FloatingActionButton)rootView.findViewById(R.id.fab);
+        fab.attachToRecyclerView(recyclerView);
 
 
         people = new ArrayList<PersonData>();
